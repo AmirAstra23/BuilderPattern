@@ -1,5 +1,6 @@
 public class PersonBuilder implements Builder {
     protected Person result;
+
     protected String name;
     protected String surname;
     protected int age;
@@ -26,6 +27,7 @@ public class PersonBuilder implements Builder {
     }
 
     public Person build() {
+
         Person p1 = new Person(name, surname, age);
         Person p2 = new Person(name, surname);
         if (p1.hasAge()) {
@@ -33,6 +35,7 @@ public class PersonBuilder implements Builder {
         } else {
             result = p2;
         }
+        result.address = address;
         return result;
     }
 }

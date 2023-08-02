@@ -32,7 +32,7 @@ public class Person {
     }
 
     public String getSurname() {
-        return getSurname();
+        return this.surname;
     }
 
     public OptionalInt getAge() {
@@ -60,11 +60,18 @@ public class Person {
 
     @Override
     public String toString() {
-        return name + " " + surname + ", " + age + " лет," + " из города " + address;
+        String s = "";
+        if (hasAge() && hasAddress()) {
+            s = name + " " + surname + ", " + age + " лет," +
+                    " из города " + address + ",";
+        } else {
+            s = name;
+        }
+        return s;
     }
 
     @Override
     public int hashCode() {
-        return 2;
+        return 0;
     }
 }
